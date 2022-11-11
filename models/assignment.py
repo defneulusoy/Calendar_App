@@ -1,6 +1,6 @@
 from write import Write
 
-class Apssignment():
+class Assignment():
 
   def __init__(self, a_name, a_description, a_date, a_time, fle):
     self.a_name = a_name
