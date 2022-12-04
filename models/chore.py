@@ -1,12 +1,10 @@
-from write import Write
+from appointment_template import AppointmentTemplate
 
 class Chore():
 
-  def __init__(self, c_name, c_description, c_date, fle):
-    self.c_name = c_name
-    self.c_description = c_description
-    self.c_date = c_date
+  def __init__(self, description, date, title, fle):
+    super().__init__(description, date, title)
     self.fle = fle
 
 def write_file(self):
-    return super.write_to_file(self.fle)
+    super.write_to_file(self.fle)

@@ -1,4 +1,4 @@
-from write import Write
+from appointment_template import AppointmentTemplate
 
 class Event():
 
@@ -10,4 +10,4 @@ class Event():
         self.fle = fle
 
     def write_file(self):
-        return super.write_to_file(self.fle)
+        super.write_to_file(self.fle)

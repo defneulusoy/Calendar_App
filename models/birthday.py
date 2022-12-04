@@ -1,10 +1,9 @@
-from write import Write
+from appointment_template import AppointmentTemplate
 
 class Birthday():
-  def __init__(self, b_name, b_date, fle):
-    self.b_name = b_name
-    self.b_date = b_date
+  def __init__(self, description, date, title, fle):
+    super().__init__(description, date, title)
     self.fle = fle
   
   def write_file(self):
-    return super.write_to_file(self.fle)
+    super.write_to_file(self.fle)
