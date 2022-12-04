@@ -2,10 +2,9 @@ from appointment_template import AppointmentTemplate
 
 class Event():
 
-    def __init__(self, e_title, e_date, e_description, e_time, fle) -> None:
-        self.e_title = e_title
-        self.e_date = e_date
-        self.e_description = e_description
+    def __init__(self, description, date, title, e_time, fle) -> None:
+        super().__init__(description, date, title)
+
         self.e_time = e_time
         self.fle = fle
 
