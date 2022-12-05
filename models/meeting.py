@@ -1,11 +1,11 @@
 from appointment_template import AppointmentTemplate
 
-class Meeting():
+class Meeting(AppointmentTemplate):
 
-    def __init__(self, description, date, title, m_time, fle) -> None:
-        super().__init__(description, date, title)
+    def __init__(self, description, date, title, file_name, m_time) -> None:
+        super().__init__(description, date, title, file_name)
         self.m_time = m_time
-        self.fle = fle
+
 
     def write_file(self):
-        super.write_to_file(self.fle)
+        super(Meeting, self).write_to_file()

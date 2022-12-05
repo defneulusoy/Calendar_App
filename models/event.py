@@ -1,12 +1,12 @@
 from appointment_template import AppointmentTemplate
 
-class Event():
+class Event(AppointmentTemplate):
 
-    def __init__(self, description, date, title, e_time, fle) -> None:
-        super().__init__(description, date, title)
+    def __init__(self, description, date, title, file_name, e_time) -> None:
+        super().__init__(description, date, title, file_name)
 
         self.e_time = e_time
-        self.fle = fle
+
 
     def write_file(self):
-        super.write_to_file(self.fle)
+        super(Event, self).write_to_file()

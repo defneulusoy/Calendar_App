@@ -1,10 +1,10 @@
 from appointment_template import AppointmentTemplate
 
-class Chore():
+class Chore(AppointmentTemplate):
 
-  def __init__(self, description, date, title, fle):
-    super().__init__(description, date, title)
-    self.fle = fle
+  def __init__(self, description, date, title, file_name):
+    super().__init__(description, date, title, file_name)
 
-def write_file(self):
-    super.write_to_file(self.fle)
+
+  def write_file(self):
+    super(Chore, self).write_to_file()
