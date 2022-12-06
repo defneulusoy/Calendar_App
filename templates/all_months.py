@@ -3,9 +3,12 @@ from monthly_template import one_month
 class months_all:
 
     def __init__(self,year):
+        # this just makes all the months together
         self.year = year
+        #gets year from action selector
         self.months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
         self.month_code = [0, 3, 2, 5, 0, 3, 5, 1, 4, 6, 2, 4 ]
+        #month code needed to calculate first day of the month
         self.month_template = []
         for x in range(len(self.months)):
             if not self.year% 4 == 0:
@@ -41,6 +44,6 @@ class months_all:
                 elif first_day == 6:
                     self.month_template.append(one_month(self.months[x], "Saturday", self.year))
 
-        self.month_template[1].print_real()
+        #self.month_template[1].print_real()
         
-x = months_all(1934)
+#x = months_all(1934)

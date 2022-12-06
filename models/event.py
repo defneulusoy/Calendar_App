@@ -8,5 +8,5 @@ class Event(AppointmentTemplate):
         self.e_time = e_time
 
 
-    def write_file(self):
-        super(Event, self).write_to_file()
+    def write_calendar(self):
+        super(Event, self).write_to_calendar()

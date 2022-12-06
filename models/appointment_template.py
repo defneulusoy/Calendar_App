@@ -7,7 +7,7 @@ class AppointmentTemplate:
         self.title = title
         self.file_name = file_name
 
-    def write_to_file(self):
+    def write_to_calendar(self):
         with open(self.file_name, 'rw'):
             self.file_name.write()
 

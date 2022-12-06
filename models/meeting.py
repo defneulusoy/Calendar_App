@@ -7,5 +7,5 @@ class Meeting(AppointmentTemplate):
         self.m_time = m_time
 
 
-    def write_file(self):
-        super(Meeting, self).write_to_file()
+    def write_calendar(self):
+        super(Meeting, self).write_to_calendar()

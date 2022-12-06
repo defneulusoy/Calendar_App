@@ -6,5 +6,5 @@ class Chore(AppointmentTemplate):
     super().__init__(description, date, title, file_name)
 
 
-  def write_file(self):
-    super(Chore, self).write_to_file()
+  def write_calendar(self):
+    super(Chore, self).write_to_calendar()
