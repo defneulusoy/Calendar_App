@@ -37,8 +37,18 @@ class one_month:
             month_header.append(ele)
         self.calendar =  month_header
 
-    def add_appointment():
-        pass # work on this
+    
+
+    #add_event goes to all months, to appointment template, to action selector
+    def add_events(self):
+        pass
+    #delete event goes to all months to action selector
+    def delete_events(self):
+        pass
+    #modify event goes to all months to action selector
+    def modify_events(self):
+        pass
+
 
     def print_real(self):
         #this function must be used to print out the template, cannot print as string

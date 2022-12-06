@@ -8,3 +8,4 @@ class Chore(AppointmentTemplate):
 
   def write_calendar(self):
     super(Chore, self).write_to_calendar()
+

@@ -44,6 +44,15 @@ class months_all:
                 elif first_day == 6:
                     self.month_template.append(one_month(self.months[x], "Saturday", self.year))
 
+    def add_events(self):
+        pass
+    
+    def delete_events(self):
+        pass
+
+    def modify_events(self):
+        pass
+
         #self.month_template[1].print_real()
         
 #x = months_all(1934)

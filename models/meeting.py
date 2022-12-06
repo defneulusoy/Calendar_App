@@ -9,3 +9,4 @@ class Meeting(AppointmentTemplate):
 
     def write_calendar(self):
         super(Meeting, self).write_to_calendar()
+

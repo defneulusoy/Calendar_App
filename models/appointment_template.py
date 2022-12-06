@@ -1,4 +1,4 @@
-
+from templates import monthly_template
 
 class AppointmentTemplate:
     def __init__(self, description, date, title, file_name) -> None:
@@ -8,6 +8,7 @@ class AppointmentTemplate:
         self.file_name = file_name
 
     def write_to_calendar(self):
-        with open(self.file_name, 'rw'):
-            self.file_name.write()
+        pass
+
+
 

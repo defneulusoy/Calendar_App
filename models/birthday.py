@@ -7,3 +7,4 @@ class Birthday(AppointmentTemplate):
   
   def write_calendar(self):
     super(Birthday, self).write_to_calendar()
+
