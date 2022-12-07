@@ -59,6 +59,8 @@ class months_all:
         for ele in self.month_template:
             one_month.print_real(ele)
 
-x = months_all(2008)
-x.print_out()
+
+if __name__ == "__main__":
+    x = months_all(2008)
+    x.print_out()
         

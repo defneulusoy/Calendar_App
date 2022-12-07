@@ -1,11 +1,11 @@
-from templates import all_months as am
-from templates import monthly_template as mt
-from models import appointment as aps
-from models import assignment as ass
-from models import birthday as bir
-from models import chore as cho
-from models import event as eve
-from models import meeting as mee
+import all_months as am
+import monthly_template as mt
+import appointment as aps
+import assignment as ass
+import birthday as bir
+import chore as cho
+import event as eve
+import meeting as mee
 
 
 #look in monthly_template for how the function flow up

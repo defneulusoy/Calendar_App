@@ -1,7 +1,7 @@
 #THIS FILE IS DONE, NOTHING TO ADD HERE, DO ALL CODING ON OTHER FILES
 #THIS FILE IS DONE, NOTHING TO ADD HERE, DO ALL CODING ON OTHER FILES 
 #THIS FILE IS DONE, NOTHING TO ADD HERE, DO ALL CODING ON OTHER FILES
-from controller import action_selector
+import action_selector
 #WE NEED TO MAKE TEST CASES FOR EVERY CLASS __name__ == __main__
 
 #try not to have any objects in this page, do everything through the action selector
