@@ -43,7 +43,14 @@ class one_month:
     def add_events(self):
         pass
     #delete event goes to all months to action selector
-    def delete_events(self):
+    def delete_events(self, file_name, event_name):
+        with open(file_name , 'r') as f:
+            lines =  f.readlines()
+            with open(file_name, 'w'):
+                for line in lines:
+                    if line.strip('\n') != event_name:
+                        f.write(line)
+
         pass
     #modify event goes to all months to action selector
     def modify_events(self):

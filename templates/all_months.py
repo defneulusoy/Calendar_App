@@ -48,11 +48,14 @@ class months_all:
         pass
     
     def delete_events(self):
-        pass
+        one_month.delete_events()
 
     def modify_events(self):
         pass
 
         #self.month_template[1].print_real()
+
+    def __str__(self) -> str:
+        return self.year, self.months, self.month_code, self.month_template
         
 #x = months_all(1934)

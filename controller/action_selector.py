@@ -7,6 +7,7 @@ from models import chore as cho
 from models import event as eve
 from models import meeting as mee
 
+
 #look in monthly_template for how the function flow up
 
 
@@ -55,9 +56,8 @@ class ActionSelection():
         date = input("What is the date of the event you want to delete? (MM-DD-YYY)")
         title = input("What is the title of the event, exact wording.")
         appointment_type = input("What is the type of appointment you are trying to remove?")
+        am.months_all.delete_events()
         
-        
-        pass
 
     def modify_event(self):
         #IN THE USER PAGE, NEED TO ADD ANOTHER USER INPUT FOR WHAT THEY WANT TO MODIFY, LIKE DATE, DESC ETC. PASS VAL HERE AND MAKE IF STATMENT
@@ -67,6 +67,7 @@ class ActionSelection():
 
     def print_whole_calendar(self):
         #ADD ANOTHER PRINT FUNCTION IN THE ALL_MONTHS FILE TO PRINT THE WHOLE OBJECT AND ADD IT TO THE END OF THE ALL MONTH TEMPLATE
+        #added __Str__ to all event classes parent and child and to all_months
         pass
     
     def make_calendar(self):
