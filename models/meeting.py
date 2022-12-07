@@ -10,3 +10,6 @@ class Meeting(AppointmentTemplate):
     def write_calendar(self):
         super(Meeting, self).write_to_calendar()
 
+    def __str__(self) -> str:
+        return super(Meeting, self).__str__() + self.m_time
+

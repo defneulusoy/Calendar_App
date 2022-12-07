@@ -8,3 +8,6 @@ class Assignment(AppointmentTemplate):
 
   def write_calendar(self):
     super(Assignment, self).write_to_calendar()
+
+  def __str__(self) -> str:
+    return super(Assignment, self).__str__() + self.a_time

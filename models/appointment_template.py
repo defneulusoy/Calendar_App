@@ -10,5 +10,8 @@ class AppointmentTemplate:
     def write_to_calendar(self):
         pass
 
+    def __str__(self) -> str:
+        return self.title, self.description, self.date
+
 
 

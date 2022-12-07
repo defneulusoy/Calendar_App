@@ -11,4 +11,7 @@ class Event(AppointmentTemplate):
     def write_calendar(self):
         super(Event, self).write_to_calendar()
 
+    def __str__(self) -> str:
+        return super(Event, self).__str__() + self.e_time
+
 

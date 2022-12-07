@@ -10,4 +10,7 @@ class Appointment(AppointmentTemplate):
   def write_calendar(self):
     super(Appointment, self).write_to_calendar()
 
+  def __str__(self) -> str:
+    return super(Appointment, self).__str__() + self.appt_time
+
 

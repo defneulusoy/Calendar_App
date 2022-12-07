@@ -9,3 +9,6 @@ class Chore(AppointmentTemplate):
   def write_calendar(self):
     super(Chore, self).write_to_calendar()
 
+  def __str__(self) -> str:
+    return super(Chore, self).__str__()
+

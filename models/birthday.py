@@ -8,3 +8,6 @@ class Birthday(AppointmentTemplate):
   def write_calendar(self):
     super(Birthday, self).write_to_calendar()
 
+  def __str__(self) -> str:
+    return super(Birthday, self).__str__()
+
