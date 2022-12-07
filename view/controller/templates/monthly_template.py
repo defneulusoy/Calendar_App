@@ -70,5 +70,3 @@ class one_month:
 
     #no __str__ for this class. cant output a list, must print through this class.
 
-a = one_month("1234","monday",1234)
-a.print_real()

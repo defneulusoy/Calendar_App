@@ -53,9 +53,12 @@ class months_all:
     def modify_events(self):
         pass
 
-        #self.month_template[1].print_real()
 
-    def __str__(self) -> str:
-        return self.year, self.months, self.month_code, self.month_template
+
+    def print_out(self):
+        for ele in self.month_template:
+            one_month.print_real(ele)
+
+x = months_all(2008)
+x.print_out()
         
-#x = months_all(1934)

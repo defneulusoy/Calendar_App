@@ -1,4 +1,3 @@
-from templates import monthly_template
 
 class AppointmentTemplate:
     def __init__(self, description, date, title, file_name) -> None:
