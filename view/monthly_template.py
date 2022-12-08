@@ -4,6 +4,7 @@ class one_month:
         self.month = month
         self.year = year
         self.first_day = first_day
+        self.count_keeper = {}
         # year month and first day are needed to find what week day the month starts on
         if self.year% 4 == 0:
             self.leap_year = True
@@ -468,21 +469,69 @@ class one_month:
         self.calendar =  month_header
 
     #add_event goes to all months, to appointment template, to action selector
-    def add_events(self):
-        pass
+
+
+
+
+
+
+    def add_eventss(self,apoint):
+        x = str(apoint)
+        y = list(x.split(" "))
+        z = int(y[1])
+        if z in self.count_keeper:
+            self.count_keeper[z] += 1
+        else:
+            self.count_keeper[z] = 1
+        if z < 10:
+            b = "         %s          "%z
+        else:
+            b = "         %s         "%z
+        for i, line in enumerate(self.calendar):
+            for j, thing in enumerate(line):
+                for k, item in enumerate(thing):
+                    if b in item:
+                        l = item.index(b)
+                        indexes = [i,j,k,l]
+        f = int(indexes[0])
+        g = int(indexes[1])
+        h = int(indexes[2])
+        i = int(indexes[3])
+        if len(y) < 9:
+            if y[7] == "Birthday":
+                a1 = "Bday: " + y[5]
+            elif y[7] == "Chr":
+                a1 = "Ch: " + y[5]
+        elif y[9] == "Appointment" or y[9] == "Event" or y[9] == "Meeting" or y[9] == "Assignment":
+            if y[9] == "Appointment":
+                    a1 = "Apt: " + y[5] + " " + y[7]
+            elif  y[9] == "Event":
+                    a1 = "E: " + y[5] + " " + y[7]
+            elif  y[9] == "Meeting":
+                    a1 = "M: " + y[5] + " " + y[7]
+            elif  y[9] == "Assignment":
+                    a1 = "As: " + y[5] + " " + y[7]   
+        if len(a1)%2 == 0:
+            spaces_needed1 = int((20-len(a1))/2)
+            spaces_needed2 = int((20-len(a1))/2)
+        else:
+            spaces_needed1 = int((20-len(a1))/2)
+            spaces_needed2 = (int((20-len(a1))/2)+ 1)
+        
+        aa = " "*spaces_needed1 + a1 + " "*spaces_needed2
+        
+            
+        self.calendar[f][g+self.count_keeper[z]][h][i] = aa
+
     #delete event goes to all months to action selector
     def delete_events(self, file_name, event_name,x):
-        with open(file_name , 'r') as f:
-            lines =  f.readlines()
-            with open(file_name, 'w'):
-                for line in lines:
-                    if line.strip('\n') != event_name:
-                        f.write(line)
-
         pass
     #modify event goes to all months to action selector
     def modify_events(self):
         pass
+
+
+
 
 
     def print_real(self):

@@ -16,12 +16,13 @@ class ActionSelection():
     """
     
     def __init__(self,start_year):
+        self.list_of_appointments = []
         if isinstance(start_year, int):
             self.start_year = start_year
             self.calendar = am.months_all(start_year)
         elif isinstance(start_year, str):
             self.pathway = start_year
-            self.calendar = importcalendar
+            #read file and import year and appointments
         
 
     def add_event(self):
@@ -37,24 +38,48 @@ class ActionSelection():
         print("Number 6: Meeting")
         event_number = int(input("Please enter your selectoin: "))
         if event_number == 1:
-            ...
-            x = aps.Appointment()
+            title = input("What is the title of the appointment")
+            month = int(input("What is the month of the appointment (month number)"))
+            day = int(input("What is the day of the appointment"))
+            appt_time = input("What is the time of the appointment")
+            self.list_of_appointments.append(aps.Appointment(day,month,title,appt_time))
+            self.calendar.add_events(month,self.list_of_appointments[-1])
         elif event_number == 2:
-            ...
-            x = ass.Assignment()
+            title = input("What is the title of the assignment")
+            month = int(input("What is the month of the assignment (month number)"))
+            day = int(input("What is the day of the assignment"))
+            ass_time = input("What is the time of the assignment")
+            self.list_of_appointments.append(ass.Assignment(day,month,title,ass_time))
+            self.calendar.add_events(month,self.list_of_appointments[-1])      
         elif event_number == 3:
-            ...
-            x = bir.Birthday()
+            title = input("What is the name of the birthday")
+            month = int(input("What is the month of the birthday (month number)"))
+            day = int(input("What is the day of the birthday"))
+            self.list_of_appointments.append(bir.Birthday(day,month,title))
+            self.calendar.add_events(month,self.list_of_appointments[-1])  
         elif event_number == 4:
-            ...
-            x = cho.Chore()
+            title = input("What is the chore")
+            month = int(input("What is the month of the chore (month number)"))
+            day = int(input("What is the day of the chore"))
+            self.list_of_appointments.append(cho.Chore(day,month,title))
+            self.calendar.add_events(month,self.list_of_appointments[-1]) 
+            
         elif event_number == 5:
-            ...
-            x = eve.Event()
+            title = input("What is the title of the event")
+            month = int(input("What is the month of the event (month number)"))
+            day = int(input("What is the day of the event"))
+            appt_time = input("What is the time of the event")
+            self.list_of_appointments.append(eve.Event(day,month,title,appt_time))
+            self.calendar.add_events(month,self.list_of_appointments[-1])
+            
         elif event_number == 6:
-            ...
-            x = cho.Chore()
-        pass
+            title = input("What is the title of the meeting")
+            month = int(input("What is the month of the meeting (month number)"))
+            day = int(input("What is the day of the meeting"))
+            appt_time = input("What is the time of the meeting")
+            self.list_of_appointments.append(mee.Meeting(day,month,title,appt_time))
+            self.calendar.add_events(month,self.list_of_appointments[-1])
+
 
     def delete_event(self):
         #WRITE THESE FUNCTION IN THE MONTHLY_TEMPLATE.PY AND THEN PASS IT TO ALL_MONTHS, THEN PASS IT TO THIS FUNCTION
@@ -77,6 +102,10 @@ class ActionSelection():
         #ADD ANOTHER PRINT FUNCTION IN THE ALL_MONTHS FILE TO PRINT THE WHOLE OBJECT AND ADD IT TO THE END OF THE ALL MONTH TEMPLATE
         #added __Str__ to all event classes parent and child and to all_months
         am.months_all.print_out(self.calendar)
+        print("{" + str(self.start_year) + "}",end="")
+        for ele in self.list_of_appointments:
+            print(ele)
+        
     
     def make_calendar(self):
         start_year = int(input('Which year would you like your calendar to start from?'))
@@ -84,4 +113,7 @@ class ActionSelection():
 
 if __name__ == "__main__":
     a = ActionSelection(1999)
+    a.add_event()
     a.print_whole_calendar()
+
+   #I FEEL LIKE THIS IS DONE
