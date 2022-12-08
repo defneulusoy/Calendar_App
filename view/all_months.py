@@ -29,16 +29,17 @@ class months_all:
                     self.month_template.append(one_month(self.months[x], "Saturday", self.year))
                     
             
-    def add_events(self):
-        pass
+    def add_events(self, month):
+        the_month = month -1
+        self.month_template[the_month].add_events()
     
-    def delete_events(self):
-        one_month.delete_events()
+    def delete_events(self,month,date,title,appointment_type):
+        the_month = month - 1
+        self.month_template[the_month].delete_events(date,title,appointment_type)
 
-    def modify_events(self):
-        pass
-
-
+    def modify_events(self,month,date,title,appointment_type):
+        the_month = month - 1
+        self.month_template[the_month].modify_events(date,title,appointment_type)
 
     def print_out(self):
         for ele in self.month_template:

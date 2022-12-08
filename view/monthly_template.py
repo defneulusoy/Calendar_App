@@ -459,10 +459,6 @@ class one_month:
                     for y in range(1,7):
                         whole_body[4][0][y][0] = "         %s         "%count
                         count += 1
-                
-
-
-
         for ele in week_header:
             month_header.append(ele)
             #appends the week header to month header
@@ -471,13 +467,11 @@ class one_month:
             month_header.append(ele)
         self.calendar =  month_header
 
-    
-
     #add_event goes to all months, to appointment template, to action selector
     def add_events(self):
         pass
     #delete event goes to all months to action selector
-    def delete_events(self, file_name, event_name):
+    def delete_events(self, file_name, event_name,x):
         with open(file_name , 'r') as f:
             lines =  f.readlines()
             with open(file_name, 'w'):
