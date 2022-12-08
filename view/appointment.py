@@ -2,15 +2,17 @@ from appointment_template import AppointmentTemplate
 
 class Appointment(AppointmentTemplate):
 
-  def __init__(self, description, date, title, appt_time, fle):
-    super().__init__(description, date, title)
+  def __init__(self, day, month, title, appt_time):
+    super().__init__(day, month, title)
     self.appt_time = appt_time
-    self.fle = fle
+    
 
-  def write_calendar(self):
-    super(Appointment, self).write_to_calendar()
 
   def __str__(self) -> str:
-    return super(Appointment, self).__str__() + self.appt_time
+    return super(Appointment, self).__str__()  + f' Time: {self.appt_time} AppointmentType: Appointment'
+
+if __name__ == "__main__":
+  a = Appointment("1","2","3","4","5")
+  print(a)
 
 

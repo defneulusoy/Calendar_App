@@ -1,16 +1,18 @@
-
+import all_months
 class AppointmentTemplate:
-    def __init__(self, description, date, title, file_name) -> None:
-        self.description = description
-        self.date = date
+    def __init__(self, day, month, title) :
+        self.day =day
+        self.month = month
         self.title = title
-        self.file_name = file_name
+        
 
-    def write_to_calendar(self):
-        pass
+
 
     def __str__(self) -> str:
-        return self.title, self.description, self.date
+        return f'Day: {self.day} Month: {self.month} Title: {self.title}'
 
 
+if __name__ == "__main__":
+    a = AppointmentTemplate("3","4","3","4")
+    print(a)
 

@@ -2,14 +2,10 @@ from appointment_template import AppointmentTemplate
 
 class Meeting(AppointmentTemplate):
 
-    def __init__(self, description, date, title, file_name, m_time) -> None:
-        super().__init__(description, date, title, file_name)
+    def __init__(self, description, date, title, m_time) -> None:
+        super().__init__(description, date, title)
         self.m_time = m_time
 
 
-    def write_calendar(self):
-        super(Meeting, self).write_to_calendar()
-
     def __str__(self) -> str:
-        return super(Meeting, self).__str__() + self.m_time
-
+        return super(Meeting, self).__str__() + f' Time: {self.m_time} AppointmentType: Meeting'
