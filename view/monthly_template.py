@@ -483,6 +483,9 @@ class one_month:
             self.count_keeper[z] += 1
         else:
             self.count_keeper[z] = 1
+        if self.count_keeper[z] >5:
+            print("There are too many things on this day, you cannot add anymore")
+            return 0
         if z < 10:
             b = "         %s          "%z
         else:
