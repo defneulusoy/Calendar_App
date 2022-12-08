@@ -37,7 +37,7 @@ while x:
     elif action_selection == 3:
         final_cal.modify_event()
         
-    x = input("Whould you like to make more changes? (Y/N)")
+    x = input("Would you like to make more changes? (Y/N)")
 
 print("The file will now automatically save.")
 final_cal.print_whole_calendar() # this needs to print into a file
