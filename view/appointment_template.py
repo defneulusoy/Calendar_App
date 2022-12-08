@@ -13,6 +13,6 @@ class AppointmentTemplate:
 
 
 if __name__ == "__main__":
-    a = AppointmentTemplate("3","4","3","4")
+    a = AppointmentTemplate("3","March","Title")
     print(a)
 

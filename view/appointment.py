@@ -12,7 +12,7 @@ class Appointment(AppointmentTemplate):
     return super(Appointment, self).__str__()  + f' Time: {self.appt_time} AppointmentType: Appointment'
 
 if __name__ == "__main__":
-  a = Appointment("1","2","3","4","5")
+  a = Appointment("1","2","3","4")
   print(a)
 
 

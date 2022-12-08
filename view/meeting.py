@@ -9,3 +9,7 @@ class Meeting(AppointmentTemplate):
 
     def __str__(self) -> str:
         return super(Meeting, self).__str__() + f' Time: {self.m_time} AppointmentType: Meeting'
+
+if __name__ == '__main__':
+    x = Meeting('18', 'October', 'Project Meeting', '19:30')
+    print(x)

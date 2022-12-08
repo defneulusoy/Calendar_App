@@ -11,3 +11,7 @@ class Event(AppointmentTemplate):
 
     def __str__(self) -> str:
         return super(Event, self).__str__() + f' Time: {self.e_time} AppointmentType: Event'
+
+if __name__ == '__main__':
+  x = Event('19', 'September', 'Dinner with friend', '19:00')
+  print(x)
