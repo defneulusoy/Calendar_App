@@ -36,66 +36,66 @@ class ActionSelection():
         print("Number 4: Chore")
         print("Number 5: Event")
         print("Number 6: Meeting")
-        event_number = int(input("Please enter your selectoin: "))
+        event_number = int(input("Please enter your selection: "))
         if event_number == 1:
-            title = input("What is the title of the appointment")
-            month = int(input("What is the month of the appointment (month number)"))
-            day = int(input("What is the day of the appointment"))
-            appt_time = input("What is the time of the appointment")
+            title = input("What is the title of the appointment? ")
+            month = int(input("What is the month of the appointment (month number)? "))
+            day = int(input("What is the day of the appointment? "))
+            appt_time = input("What is the time of the appointment? ")
             self.list_of_appointments.append(aps.Appointment(day,month,title,appt_time))
             self.calendar.add_events(month,self.list_of_appointments[-1])
         elif event_number == 2:
-            title = input("What is the title of the assignment")
-            month = int(input("What is the month of the assignment (month number)"))
-            day = int(input("What is the day of the assignment"))
-            ass_time = input("What is the time of the assignment")
+            title = input("What is the title of the assignment? ")
+            month = int(input("What is the month of the assignment (month number)? "))
+            day = int(input("What is the day of the assignment? "))
+            ass_time = input("What is the time of the assignment? ")
             self.list_of_appointments.append(ass.Assignment(day,month,title,ass_time))
             self.calendar.add_events(month,self.list_of_appointments[-1])      
         elif event_number == 3:
-            title = input("What is the name of the birthday")
-            month = int(input("What is the month of the birthday (month number)"))
-            day = int(input("What is the day of the birthday"))
+            title = input("What is the name of the birthday? ")
+            month = int(input("What is the month of the birthday (month number)? "))
+            day = int(input("What is the day of the birthday? "))
             self.list_of_appointments.append(bir.Birthday(day,month,title))
             self.calendar.add_events(month,self.list_of_appointments[-1])  
         elif event_number == 4:
-            title = input("What is the chore")
-            month = int(input("What is the month of the chore (month number)"))
-            day = int(input("What is the day of the chore"))
+            title = input("What is the chore? ")
+            month = int(input("What is the month of the chore (month number)? "))
+            day = int(input("What is the day of the chore? "))
             self.list_of_appointments.append(cho.Chore(day,month,title))
             self.calendar.add_events(month,self.list_of_appointments[-1]) 
             
         elif event_number == 5:
-            title = input("What is the title of the event")
-            month = int(input("What is the month of the event (month number)"))
-            day = int(input("What is the day of the event"))
-            appt_time = input("What is the time of the event")
+            title = input("What is the title of the event? ")
+            month = int(input("What is the month of the event (month number)? "))
+            day = int(input("What is the day of the event? "))
+            appt_time = input("What is the time of the event? ")
             self.list_of_appointments.append(eve.Event(day,month,title,appt_time))
             self.calendar.add_events(month,self.list_of_appointments[-1])
             
         elif event_number == 6:
-            title = input("What is the title of the meeting")
-            month = int(input("What is the month of the meeting (month number)"))
-            day = int(input("What is the day of the meeting"))
-            appt_time = input("What is the time of the meeting")
+            title = input("What is the title of the meeting? ")
+            month = int(input("What is the month of the meeting (month number)? "))
+            day = int(input("What is the day of the meeting? "))
+            appt_time = input("What is the time of the meeting? ")
             self.list_of_appointments.append(mee.Meeting(day,month,title,appt_time))
             self.calendar.add_events(month,self.list_of_appointments[-1])
 
 
     def delete_event(self):
         #WRITE THESE FUNCTION IN THE MONTHLY_TEMPLATE.PY AND THEN PASS IT TO ALL_MONTHS, THEN PASS IT TO THIS FUNCTION
-        month = int(input("What is the month of the event you want to delete? (Month number)"))
-        day = int(input("What is the day of the event? (Number)"))
-        title = input("What is the title of the event, exact wording.")
-        appointment_type = input("What is the type of appointment you are trying to remove?")
+        month = int(input("What is the month of the event you want to delete? (Month number) "))
+        day = int(input("What is the day of the event? (Number) "))
+        title = input("What is the title of the event, with exact wording? ")
+        appointment_type = input("What is the type of appointment you are trying to remove? ")
         self.calendar.delete_events(month,day,title,appointment_type)
         
 
     def modify_event(self):
         #IN THE USER PAGE, NEED TO ADD ANOTHER USER INPUT FOR WHAT THEY WANT TO MODIFY, LIKE DATE, DESC ETC. PASS VAL HERE AND MAKE IF STATMENT
-        month = int(input("What is the month of the event you want to modify? (Month number)"))
-        day = int(input("What is the day of the event? (Number)"))
-        title = input("What is the title of the event, exact wording.")
-        appointment_type = input("What is the type of appointment you are trying to modify?")
+        month = int(input("What is the month of the event you want to modify? (Month number) "))
+        day = int(input("What is the day of the event? (Number) "))
+        title = input("What is the title of the event, with exact wording? ")
+        appointment_type = input("What is the type of appointment you are trying to modify? ")
         self.calendar.modify_events(month,day,title,appointment_type)
 
     def print_whole_calendar(self):
@@ -108,7 +108,7 @@ class ActionSelection():
         
     
     def make_calendar(self):
-        start_year = int(input('Which year would you like your calendar to start from?'))
+        start_year = int(input('Which year would you like your calendar to start from? '))
         self.calendar = am.months_all(start_year)
 
 if __name__ == "__main__":
