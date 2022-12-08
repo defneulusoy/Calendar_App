@@ -10,5 +10,6 @@ class Birthday(AppointmentTemplate):
     return super(Birthday, self).__str__() + " AppointmentType: Birthday"
   
 if __name__ == '__main__':
-  x = Birthday('22', 'August', 'Mother\'s birthday')
+  x = Birthday('22', 'August', 'Mother')
   print(x)
+ #+'\'s Birthday'

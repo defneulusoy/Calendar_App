@@ -102,9 +102,14 @@ class ActionSelection():
         #ADD ANOTHER PRINT FUNCTION IN THE ALL_MONTHS FILE TO PRINT THE WHOLE OBJECT AND ADD IT TO THE END OF THE ALL MONTH TEMPLATE
         #added __Str__ to all event classes parent and child and to all_months
         am.months_all.print_out(self.calendar)
+
         print("{" + str(self.start_year) + "}",end="")
         for ele in self.list_of_appointments:
             print(ele)
+        with open('cal.txt', 'w') as f:
+            for ele in self.list_of_appointments:
+                f.write("%s\n" %ele)
+
         
     
     def make_calendar(self):

@@ -11,7 +11,7 @@ calendar_type = input("Please enter 'new' to add a new calendar, or the pathway 
 #initializes the action selector so that things can be done
 
 if calendar_type == 'new':
-    year = int(input('Which year would you like your calendar to start from?'))
+    year = int(input('Which year would you like your calendar to start from? '))
     final_cal = action_selector.ActionSelection(year)
     #if new, asks for year and makes the calendar in the action selector
 else:
@@ -21,9 +21,9 @@ else:
     #im thinking that at the end of the calendar template will be the object of the calendar printed in bytes
     #that way we can read and easily manipulate.
 
-print("Welcome to your personalized calendar application")
-print("Here, you can do many tasks such as adding, deleting or modifying various types of pre_determined or new events, and save all your events to view them later")
-print("Here are some suggestions, please enter your selection number")
+print("Welcome to your personalized calendar application.")
+print("Here, you can do many tasks such as adding, deleting or modifying various types of pre_determined or new events, and save all your events to view them later.")
+print("Here are some suggestions, please enter your selection number:")
 #this is where the user starts to add/modify/delete
 x = "Y"
 while x == "Y":
@@ -40,7 +40,9 @@ while x == "Y":
     x = input("Would you like to make more changes? (Y/N): ")
 
 print("The file will now automatically save.")
-final_cal.print_whole_calendar() # this needs to print into a file
+
+final_cal.print_whole_calendar()
+    # this needs to print into a file
 
 
 #THIS FILE IS DONE, NOTHING TO ADD HERE, DO ALL CODING ON OTHER FILES
