@@ -2,6 +2,7 @@
 
 # Download and Run Instructions:
 # VSCode should be downloaded on computer.
+# Python should be downloaded on computer.
 # The Python extension on VSCode should be installed, and the version should be 3.9 or higher.
 # A Python interpreter should be installed on computer.
 # Once you make sure that you have the appropriate environment for this program by completing the steps above:
