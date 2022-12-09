@@ -503,7 +503,7 @@ class one_month:
         if len(y) < 9:
             if y[7] == "Birthday":
                 a1 = "Bday: " + y[5]
-            elif y[7] == "Chr":
+            elif y[7] == "Chore":
                 a1 = "Ch: " + y[5]
         elif y[9] == "Appointment" or y[9] == "Event" or y[9] == "Meeting" or y[9] == "Assignment":
             if y[9] == "Appointment":
@@ -527,12 +527,55 @@ class one_month:
         self.calendar[f][g+self.count_keeper[z]][h][i] = aa
 
     #delete event goes to all months to action selector
-    def delete_events(self, file_name, event_name,x):
-        pass
-    #modify event goes to all months to action selector
-    def modify_events(self):
-        pass
+    def delete_eventss(self, day, title, appointment_type,time="none"):
+        x = day
+        self.count_keeper[x] -= 1
+        y = title
+        z = appointment_type
+        w = time
+        if z == "Appointment":
+            title_compiled = "Apt: " + y + " " + w
+        elif z == "Assignment":
+            title_compiled = "As: " + y + " " + w
+        elif z == "Birthday":
+            title_compiled = "Bday: " + y 
+        elif z == "Chore":
+            title_compiled = "Ch: " + y
+        elif z == "Event":
+            title_compiled = "E: " + y + " " + w
+        elif z == "Meeting":
+            title_compiled = "M: " + y + " " + w
 
+        if len(title_compiled)%2 == 0:
+            spaces_needed1 = int((20-len(title_compiled))/2)
+            spaces_needed2 = int((20-len(title_compiled))/2)
+        else:
+            spaces_needed1 = int((20-len(title_compiled))/2)
+            spaces_needed2 = (int((20-len(title_compiled))/2)+ 1)
+        
+        aa = " "*spaces_needed1 + title_compiled + " "*spaces_needed2
+
+        if x < 10:
+            b = "         %s          "%x
+        else:
+            b = "         %s         "%x
+        for i, line in enumerate(self.calendar):
+            for j, thing in enumerate(line):
+                for k, item in enumerate(thing):
+                    if b in item:
+                        l = item.index(b)
+                        indexes = [i,j,k,l]
+        f = int(indexes[0])
+        g = int(indexes[1])
+        h = int(indexes[2])
+        i = int(indexes[3])
+        for xy in range(1,5):
+            if self.calendar[f][g+xy][h][i] == aa:
+                self.calendar[f][g+xy][h][i] = "                    "
+
+
+    #modify event goes to all months to action selector
+    
 
 
 
@@ -558,6 +601,25 @@ class one_month:
                 print("")
             else:
                 print(x)
+
+        with open('cal.txt', 'a') as f:
+            for x in self.calendar:
+                if isinstance(self.calendar, list):
+                    for y in x:
+                        for z in y:
+                            if isinstance(z,list):
+                                for a in z:
+                                    f.write(a)
+                                    count += 1
+                                    if count == 14:
+                                        f.write("\n")
+                                        count = 0 
+                                    
+                            else:
+                                f.write(z)
+                    f.write("\n")
+                else:
+                    f.write("%s\n" %x)
 
     #no __str__ for this class. cant output a list, must print through this class.
 

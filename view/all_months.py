@@ -33,13 +33,9 @@ class months_all:
         the_month = month -1
         self.month_template[the_month].add_eventss(apt)
     
-    def delete_events(self,month,date,title,appointment_type):
+    def delete_events(self,month,day,title,appointment_type, time="nothing"):
         the_month = month - 1
-        self.month_template[the_month].delete_events(date,title,appointment_type)
-
-    def modify_events(self,month,date,title,appointment_type):
-        the_month = month - 1
-        self.month_template[the_month].modify_events(date,title,appointment_type)
+        self.month_template[the_month].delete_eventss(day,title,appointment_type,time)
 
     def print_out(self):
         for ele in self.month_template:

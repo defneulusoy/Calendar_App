@@ -13,6 +13,8 @@ calendar_type = input("Please enter 'new' to add a new calendar, or the pathway 
 if calendar_type == 'new':
     year = int(input('Which year would you like your calendar to start from? '))
     final_cal = action_selector.ActionSelection(year)
+    f = open('cal.txt', 'w')
+    f.close()
     #if new, asks for year and makes the calendar in the action selector
 else:
     pathway = calendar_type

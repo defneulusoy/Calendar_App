@@ -22,6 +22,17 @@ class ActionSelection():
             self.calendar = am.months_all(start_year)
         elif isinstance(start_year, str):
             self.pathway = start_year
+            self.list_of_appointments = []
+            f= open(self.pathway,"r")
+            lines = f.readlines()[565:-1]
+            print(lines)
+            for line in lines:
+                self.list_of_appointments.append(line.strip())
+            self.start_year = int(self.list_of_appointments[0])
+            self.calendar = am.months_all(self.start_year)
+
+                
+
             #read file and import year and appointments
         
 
@@ -87,7 +98,16 @@ class ActionSelection():
         day = int(input("What is the day of the event? (Number) "))
         title = input("What is the title of the event, with exact wording? ")
         appointment_type = input("What is the type of appointment you are trying to remove? ")
-        self.calendar.delete_events(month,day,title,appointment_type)
+        if appointment_type == "Appointment" or appointment_type == "Assignment" or appointment_type == "Event" or appointment_type == "Meeting":
+            time = input("What is the time of the event")
+        self.calendar.delete_events(month,day,title,appointment_type,time)
+        if appointment_type == "Appointment" or appointment_type == "Assignment" or appointment_type == "Event" or appointment_type == "Meeting":
+                x = "Day: %s Month: %s Title: %s Time: %s AppointmentType: %s"%(day,month,title,time,appointment_type)
+        else:
+                x = "Day: %s Month: %s Title: %s AppointmentType: %s"%(day,month,title,appointment_type)
+        for ele in self.list_of_appointments:
+            if str(ele) == x:
+                self.list_of_appointments.remove(ele)
         
 
     def modify_event(self):
@@ -96,17 +116,89 @@ class ActionSelection():
         day = int(input("What is the day of the event? (Number) "))
         title = input("What is the title of the event, with exact wording? ")
         appointment_type = input("What is the type of appointment you are trying to modify? ")
-        self.calendar.modify_events(month,day,title,appointment_type)
+        if appointment_type == "Appointment" or appointment_type == "Assignment" or appointment_type == "Event" or appointment_type == "Meeting":
+            time = input("What is the time of the event")
+        if appointment_type == "Appointment" or appointment_type == "Assignment" or appointment_type == "Event" or appointment_type == "Meeting":
+            x = "Day: %s Month: %s Title: %s Time: %s AppointmentType: %s"%(day,month,title,time,appointment_type)
+        else:
+            x = "Day: %s Month: %s Title: %s AppointmentType: %s"%(day,month,title,appointment_type)
+        for ele in self.list_of_appointments:
+            if str(ele) == x:
+                self.list_of_appointments.remove(ele)
+
+
+        self.calendar.delete_events(month,day,title,appointment_type,time)
+        
+        bb = "Y"
+        time_change = "hi"
+        day_change = "hi"
+        title_change = "hi"
+        while bb == "Y":
+            if appointment_type == "Appointment" or appointment_type == "Assignment" or appointment_type == "Event" or appointment_type == "Meeting":
+                print("What would you like to change?")
+                print("1: Day change")
+                print("2: Title change")
+                print("3: Time change")
+                change = int(input("What would you like to change?"))
+                if change == 1:
+                    day_change = int(input("What day would you like to change to?"))
+                if change == 2:
+                    title_change = input("What would you like to change the title to")
+                if change == 3:
+                    time_change = input("What would you like to change the time to?")
+            else:
+                print("What would you like to change?")
+                print("1: Day change")
+                print("2: Title change")
+                change = int(input("What would you like to change?"))
+                if change == 1:
+                    day_change = int(input("What day would you like to change to?"))
+                if change == 2:
+                    title_change = input("What would you like to change the title to")
+            bb = input("Do you want to change another thing? (Y/N)")
+
+
+
+        if title_change == "hi":
+            title_change = title
+        if day_change == "hi":
+            day_change = day
+        if time_change == "hi":
+            time_change = time
+
+
+
+        if appointment_type == "Appointment":
+            self.list_of_appointments.append(aps.Appointment(day_change,month,title_change,time_change))
+            self.calendar.add_events(month,self.list_of_appointments[-1])
+        elif appointment_type == "Assignment":
+            self.list_of_appointments.append(ass.Assignment(day_change,month,title_change,time_change))
+            self.calendar.add_events(month,self.list_of_appointments[-1])      
+        elif appointment_type == "Birthday":
+            self.list_of_appointments.append(bir.Birthday(day_change,month,title_change))
+            self.calendar.add_events(month,self.list_of_appointments[-1])  
+        elif appointment_type == "Chore":
+            self.list_of_appointments.append(cho.Chore(day_change,month,title_change))
+            self.calendar.add_events(month,self.list_of_appointments[-1]) 
+        elif appointment_type == "Event":
+            self.list_of_appointments.append(eve.Event(day_change,month,title_change,time_change))
+            self.calendar.add_events(month,self.list_of_appointments[-1])           
+        elif appointment_type == "Meeting":
+            self.list_of_appointments.append(mee.Meeting(day,day_change,title_change,time_change))
+            self.calendar.add_events(month,self.list_of_appointments[-1])
+
+
 
     def print_whole_calendar(self):
         #ADD ANOTHER PRINT FUNCTION IN THE ALL_MONTHS FILE TO PRINT THE WHOLE OBJECT AND ADD IT TO THE END OF THE ALL MONTH TEMPLATE
         #added __Str__ to all event classes parent and child and to all_months
         am.months_all.print_out(self.calendar)
 
-        print("{" + str(self.start_year) + "}",end="")
+        a = str(self.start_year)
         for ele in self.list_of_appointments:
             print(ele)
-        with open('cal.txt', 'w') as f:
+        with open('cal.txt', 'a') as f:
+            f.write("%s\n"%a)
             for ele in self.list_of_appointments:
                 f.write("%s\n" %ele)
 
@@ -119,6 +211,6 @@ class ActionSelection():
 if __name__ == "__main__":
     a = ActionSelection(1999)
     a.add_event()
-    a.print_whole_calendar()
+    a.delete_event()
 
    #I FEEL LIKE THIS IS DONE
