@@ -2,7 +2,6 @@
 #THIS FILE IS DONE, NOTHING TO ADD HERE, DO ALL CODING ON OTHER FILES 
 #THIS FILE IS DONE, NOTHING TO ADD HERE, DO ALL CODING ON OTHER FILES
 import action_selector
-#WE NEED TO MAKE TEST CASES FOR EVERY CLASS __name__ == __main__
 
 #try not to have any objects in this page, do everything through the action selector
 calendar_type = input("Please enter 'new' to add a new calendar, or the pathway to an old calendar if you would like to see an existing calendar: ")

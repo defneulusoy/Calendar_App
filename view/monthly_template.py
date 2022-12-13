@@ -621,7 +621,7 @@ class one_month:
                 else:
                     f.write("%s\n" %x)
 
-    #no __str__ for this class. cant output a list, must print through this class.
+    #no __str__ for this class. can't output a list, must print through this class.
 
 if __name__ == "__main__":
     x = one_month("February","Monday",1999)

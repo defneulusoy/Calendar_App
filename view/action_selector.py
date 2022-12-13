@@ -8,7 +8,7 @@ import event as eve
 import meeting as mee
 
 
-#look in monthly_template for how the function flow up
+
 
 
 class ActionSelection():
@@ -37,8 +37,7 @@ class ActionSelection():
         
 
     def add_event(self):
-        #IN USER PAGE, NEED TO ADD ANOTHE RUSER INPUT FOR WHAT KIND OF APPOINTMENT, PASS THAT VAL AND REQUIRED DATA INTO HERE AND MAKE THE IF STATMENT TO WHICH CLASS TO RUN
-        #THEN WE GOT TO MAKE ANOTHER FUNCTION IN APPOINTMENT TEMPLATE TO WRITE THE APPOINTMENT AS A STRING INTO CALENDAR TEMPLATE
+   
         print("You have chosen to add an event.")
         print("What kind of event would you like to add?")
         print("Number 1: Appointment")
@@ -93,7 +92,7 @@ class ActionSelection():
 
 
     def delete_event(self):
-        #WRITE THESE FUNCTION IN THE MONTHLY_TEMPLATE.PY AND THEN PASS IT TO ALL_MONTHS, THEN PASS IT TO THIS FUNCTION
+        
         month = int(input("What is the month of the event you want to delete? (Month number) "))
         day = int(input("What is the day of the event? (Number) "))
         title = input("What is the title of the event, with exact wording? ")
@@ -111,7 +110,7 @@ class ActionSelection():
         
 
     def modify_event(self):
-        #IN THE USER PAGE, NEED TO ADD ANOTHER USER INPUT FOR WHAT THEY WANT TO MODIFY, LIKE DATE, DESC ETC. PASS VAL HERE AND MAKE IF STATMENT
+        
         month = int(input("What is the month of the event you want to modify? (Month number) "))
         day = int(input("What is the day of the event? (Number) "))
         title = input("What is the title of the event, with exact wording? ")
@@ -190,7 +189,7 @@ class ActionSelection():
 
 
     def print_whole_calendar(self):
-        #ADD ANOTHER PRINT FUNCTION IN THE ALL_MONTHS FILE TO PRINT THE WHOLE OBJECT AND ADD IT TO THE END OF THE ALL MONTH TEMPLATE
+        
         #added __Str__ to all event classes parent and child and to all_months
         am.months_all.print_out(self.calendar)
 
@@ -213,4 +212,3 @@ if __name__ == "__main__":
     a.add_event()
     a.delete_event()
 
-   #I FEEL LIKE THIS IS DONE
